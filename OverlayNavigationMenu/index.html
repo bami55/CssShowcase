@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Overlay Navigation Menu</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section>
+      <h2>Navigation Menu</h2>
+    </section>
+    <div class="toggle"></div>
+    <section class="navigation">
+      <span style="--i: 0"></span>
+      <span style="--i: 1"></span>
+      <span style="--i: 2"></span>
+      <span style="--i: 3"></span>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Portfolio</a></li>
+        <li><a href="#">Team</a></li>
+        <li><a href="#">Contract</a></li>
+      </ul>
+    </section>
+
+    <script>
+      const toggle = document.querySelector('.toggle');
+      const navigation = document.querySelector('.navigation');
+
+      const toggleMenu = () => {
+        toggle.classList.toggle('active');
+        navigation.classList.toggle('active');
+      };
+      toggle.onclick = toggleMenu;
+    </script>
+  </body>
+</html>

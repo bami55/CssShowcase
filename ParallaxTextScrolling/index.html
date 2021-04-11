@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section>
+      <div class="text"></div>
+    </section>
+  </body>
+
+  <script>
+    const createText = () => {
+      const divText = document.querySelector('.text');
+      for (let i = 0; i < 14; i++) {
+        const h2 = document.createElement('h2');
+        h2.style.setProperty('--i', 0.2 * (i + 1));
+
+        for (let j = 0; j < 10; j++) {
+          const span = document.createElement('span');
+          span.textContent = i % 2 == 0 ? 'GOAL!!' : 'L1ght';
+          h2.appendChild(span);
+        }
+
+        divText.appendChild(h2);
+      }
+    };
+    createText();
+
+    const position = document.documentElement;
+    position.addEventListener('mousemove', (e) => {
+      position.style.setProperty('--x', e.clientX + 'px');
+    });
+  </script>
+</html>
